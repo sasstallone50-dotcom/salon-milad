@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Salon Milad | Din Lokale Frisør i Aalborg</title>
+    <style>
+        :root {
+            --bg-main: #141414;
+            --bg-card: #1f1f1f;
+            --accent-gold: #c5a059;
+            --text-light: #f5f5f5;
+            --text-muted: #a0a0a0;
+            --border-color: #333333;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            background-color: var(--bg-main);
+            color: var(--text-light);
+            line-height: 1.6;
+            scroll-behavior: smooth;
+        }
+
+        /* Шапка */
+        header {
+            background: rgba(20, 20, 20, 0.95);
+            border-bottom: 1px solid var(--border-color);
+            padding: 20px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            font-weight: 400;
+            color: var(--text-light);
+        }
+
+        .logo span {
+            color: var(--accent-gold);
+        }
+
+        nav a {
+            color: var(--text-muted);
+            text-decoration: none;
+            margin-left: 25px;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: var(--accent-gold);
+        }
+
+        /* Главный баннер */
+        .hero {
+            background-image: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.75)), url('https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+            padding: 120px 20px;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            font-weight: 300;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            margin-bottom: 15px;
+        }
+
+        .hero p {
+            color: var(--accent-gold);
+            font-size: 1.2rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Контейнер */
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 1.8rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            font-weight: 300;
+            margin-bottom: 40px;
+            color: var(--text-light);
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 50px;
+            height: 2px;
+            background: var(--accent-gold);
+            margin: 15px auto 0;
+        }
+
+        /* О нас */
+        .about-box {
+            text-align: center;
+            max-width: 750px;
+            margin: 0 auto 70px;
+            color: var(--text-muted);
+            font-size: 1.05rem;
+            line-height: 1.8;
+        }
+
+        /* Прайс-лист */
+        .pricing-grid {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+            padding: 30px;
+            margin-bottom: 70px;
+        }
+
+        .price-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 16px 0;
+            border-bottom: 1px solid #2a2a2a;
+        }
+
+        .price-row:last-child {
+            border-bottom: none;
+        }
+
+        .price-name {
+            font-size: 1.05rem;
+            font-weight: 400;
+            letter-spacing: 0.5px;
+        }
+
+        .price-value {
+            color: var(--accent-gold);
+            font-size: 1.1rem;
+            font-weight: bold;
+        }
+
+        /* Контакты и Карта */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            align-items: stretch;
+        }
+
+        .contact-info {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            padding: 35px;
+            border-radius: 4px;
+        }
+
+        .contact-info h3 {
+            color: var(--accent-gold);
+            font-size: 1.2rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 20px;
+            font-weight: 400;
+        }
+
+        .info-item {
+            margin-bottom: 15px;
+            font-size: 0.95rem;
+        }
+
+        .info-item strong {
+            display: inline-block;
+            width: 100px;
+            color: var(--text-muted);
+        }
+
+        .hours-list {
+            list-style: none;
+            margin-top: 10px;
+        }
+
+        .hours-list li {
+            display: flex;
+            justify-content: space-between;
+            padding: 6px 0;
+            font-size: 0.9rem;
+            border-bottom: 1px dotted #2d2d2d;
+        }
+
+        .btn-call {
+            display: block;
+            text-align: center;
+            background: var(--accent-gold);
+            color: #000;
+            text-decoration: none;
+            padding: 14px;
+            margin-top: 25px;
+            font-weight: bold;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            border-radius: 2px;
+            transition: opacity 0.3s;
+        }
+
+        .btn-call:hover {
+            opacity: 0.9;
+        }
+
+        .map-box iframe {
+            width: 100%;
+            height: 100%;
+            min-height: 380px;
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+            filter: grayscale(80%) invert(90%) contrast(90%);
+        }
+
+        /* Футер */
+        footer {
+            border-top: 1px solid var(--border-color);
+            text-align: center;
+            padding: 30px 20px;
+            color: #666;
+            font-size: 0.8rem;
+            letter-spacing: 1px;
+        }
+
+        @media (max-width: 768px) {
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+            header {
+                flex-direction: column;
+                gap: 15px;
+            }
+            nav a {
+                margin: 0 10px;
+            }
+            .hero h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">Salon <span>Milad</span></div>
+        <nav>
+            <a href="#om-os">Om os</a>
+            <a href="#priser">Priser</a>
+            <a href="#kontakt">Find os</a>
+        </nav>
+    </header>
+
+    <div class="hero">
+        <h1>God stil til gode penge</h1>
+        <p>Professionelt håndværk & fair priser</p>
+    </div>
+
+    <div class="container">
+        
+        <!-- Секция О нас -->
+        <h2 class="section-title" id="om-os">Velkommen</h2>
+        <div class="about-text about-box">
+            Hos Salon Milad handler frisørfaget om mere end bare en klipning. Det handler om godt håndværk, personlig relation og et skarpt resultat, du er tilfreds med hver evig eneste gang. Vi byder dig velkommen i hyggelige rammer på Vesterbro.
+        </div>
+
+        <!-- Прайс-лист -->
+        <h2 class="section-title" id="priser">Vores Priser</h2>
+        <div class="pricing-grid">
+            <div class="price-row">
+                <span class="price-name">Standard herreklip</span>
+                <span class="price-value">180 KR</span>
+            </div>
+            <div class="price-row">
+                <span class="price-name">Skin-fade</span>
+                <span class="price-value">220 KR</span>
+            </div>
+            <div class="price-row">
+                <span class="price-name">Klip og skæg</span>
+                <span class="price-value">320 KR</span>
+            </div>
+            <div class="price-row">
+                <span class="price-name">Dameklip</span>
+                <span class="price-value">260 KR</span>
+            </div>
+            <div class="price-row">
+                <span class="price-name">Børneklip</span>
+                <span class="price-value">150 KR</span>
+            </div>
+            <div class="price-row">
+                <span class="price-name">Skægtrimning</span>
+                <span class="price-value">Fra 120 KR</span>
+            </div>
+        </div>
+
+        <!-- Контакты и Карта -->
+        <h2 class="section-title" id="kontakt">Kontakt & Åbningstider</h2>
+        <div class="contact-grid">
+            
+            <div class="contact-info">
+                <h3>Salon Milad</h3>
+                <div class="info-item"><strong>Adresse:</strong> Vesterbro 10, st. tv, 9000 Aalborg</div>
+                <div class="info-item"><strong>Telefon:</strong> +45 91 60 21 56</div>
+                <div class="info-item"><strong>Email:</strong> info@salonmilad.dk</div>
+                <div class="info-item"><strong>CVR:</strong> 43 81 48 69</div>
+
+                <ul class="hours-list" style="margin-top: 20px;">
+                    <li><span>Mandag - Fredag</span><span>10:00 – 17:00</span></li>
+                    <li><span>Lørdag</span><span>10:00 – 14:00</span></li>
+                    <li><span>Søndag</span><span>Lukket</span></li>
+                </ul>
+
+                <a href="tel:+4591602156" class="btn-call">📞 Ring og book tid</a>
+            </div>
+
+            <div class="map-box">
+                <iframe src="https://maps.google.com/maps?q=Vesterbro%2010,%209000%20Aalborg&t=&z=15&ie=UTF8&iwloc=&output=embed" loading="lazy"></iframe>
+            </div>
+
+        </div>
+
+    </div>
+
+    <footer>
+        &copy; 2026 Salon Milad. CVR: 43 81 48 69. Udviklet af Grebnev_22.
+    </footer>
+
+</body>
+</html>
